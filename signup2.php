@@ -123,7 +123,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div id="barba-wrapper">
         <div class="barba-container">
             <div id="createACC" class="sign-up-form">
-                <h1>Create Account (1/2)</h1>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <div class="form-group <?php echo (!empty($firstname_err)) ? 'has-error' : ''; ?>">
                         <input type="firstname" name="firstname" class="input-box" placeholder="Your Firstname" value="<?php echo $firstname; ?>">
