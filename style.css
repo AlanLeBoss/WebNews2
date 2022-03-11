@@ -1,0 +1,112 @@
+
+.banniere{
+    margin-right: 50px;
+}
+
+header{
+    text-align: center;
+    color:lightcoral;
+    background:blueviolet(to bottom, pink, white);
+    height: 100px;
+}
+body#pageConnexion{
+    background-image: URL(img/fond.jpg) ;
+}
+
+body#redactionjournaliste{
+    background-image: URL(img/fond.jpg) ;
+}
+
+.connexion{
+    padding-top: 50px;
+    display: block;
+    text-align: center;
+    align-items: center;
+}
+.password{
+    padding-right: 48px;
+}
+.connexion p a{
+    background-color: white;
+    padding: 5px 35px 5px 35px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+.connexion p a:hover{
+    background-color: grey;
+}
+
+.confirmer{
+    padding-right: 135px;
+}
+.nom{
+    padding-right: 73px;
+}
+.valid{
+    padding-left: 500px;
+
+}
+.valid a:hover{
+background-color: grey;
+}
+nav{
+    text-align: center;
+}
+nav li{
+    float: left;
+    border: pink;
+}
+
+.utilisateur{
+    float: left;
+    margin-left: 200px;
+}
+.titre{
+    color: darkblue;
+    text-align: center;
+    font-style: italic;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+.articles a{
+    background-color: pink;
+    padding: 10px 60px 10px 60px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.articles a:hover{
+    background-color: grey;
+}
+.articles{
+    margin: auto;
+    width: 500px;
+}
+.journaliste{
+    background-image: URL(img/fond.jpg);
+    width: 500px;
+    height: 500px;
+    margin-left: 750px;
+}
+.journaliste p a{
+    background-color: white;
+    padding: 10px 60px 10px 60px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.journaliste p{
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+.journaliste p a:hover{
+    background-color: grey;
+}
+
+.resizedTextbox {width: 1000px; height: 200px}
+
+center{
+    color: white;
+}
