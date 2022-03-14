@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // Include config file
 require_once "config.php";
 require "user.php";
@@ -6,7 +8,7 @@ require "user.php";
 $firstname = $lastname = $email = $password = $confirm_password = "";
 $firstname_err = $lastname_err = $email_err = $password_err = $confirm_password_err = "";
 $_SESSION["user"] = null;
-$_SESSION["loggedin-as-admin"] = false; 
+$_SESSION["loggedin-as-admin"] = false;
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -82,19 +84,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt = mysqli_prepare($link, $sql)) {
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "ssss", $param_firstname, $param_lastname, $param_email, $param_password);
-           session_start();
+            session_start();
             // Store data in session variables
             // Set parameters
             $param_firstname = $firstname;
             $param_lastname = $lastname;
             $param_email = $email;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-            $_SESSION["user"] = new user(0,$firstname, $lastname, $email, false);
+            $_SESSION["user"] = new user(0, $firstname, $lastname, $email);
             // Attempt to execute the prepared statement
             if (mysqli_stmt_execute($stmt)) {
                 // Redirect to createAccount2 page. On this page we will ask the user if he wants to be a buyer only or also a seller
-                echo "Nickel";
-
+                header("location: home.php");
             } else {
                 echo "Something went wrong.";
             }
@@ -111,9 +112,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 
 <head>
-<style>
-<?php include "./signup.css"?>
-</style>
+    <style>
+        <?php include "./signup.css" ?>
+    </style>
     <link rel="icon" href="../images/icon.png">
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/glacial-indifference" type="text/css" />
     <title>Create Account</title>
@@ -155,7 +156,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </body>
-
-</html>
 
 </html>

@@ -5,15 +5,13 @@ class user
     private $firstname;
     private $lastname;
     private $email;
-    private $buyer = false;
 
-    public function __construct(int $id, string $fname, string $lname, string $mail, bool $buyer)
+    public function __construct(int $id, string $fname, string $lname, string $mail)
     {
         $this->id = $id;
         $this->firstname = $fname;
         $this->lastname = $lname;
         $this->email = $mail;
-        $this->buyer = $buyer;
     }
     function getId()
     {
@@ -30,13 +28,5 @@ class user
     function getEmail()
     {
         return $this->email;
-    }
-    function isBuyer()
-    {
-        return $this->buyer;
-    }
-    function setBuyer(bool $isbuyer)
-    {
-        $this->buyer = $isbuyer;
     }
 }
